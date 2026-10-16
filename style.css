@@ -1,0 +1,89 @@
+/* Colors and fonts */
+:root {
+  --bg: #ffffff;
+  --ink: #161616;
+  --muted: #6e6e6e;
+  --rule: #e8e8e8;
+  --accent: #2448c8;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --ink: #ececec;
+    --muted: #8f8f8f;
+    --rule: #262626;
+    --accent: #8ea6ff;
+  }
+}
+
+/* Page */
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.75 var(--sans);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+header, main, footer {
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Header */
+header { padding-top: 2rem; }
+
+nav { display: flex; justify-content: center; gap: 1.75rem; }
+nav a { color: var(--muted); font-size: 0.95rem; }
+nav a:hover { color: var(--ink); text-decoration: none; }
+nav a[aria-current="page"] { color: var(--ink); font-weight: 500; }
+
+/* Main content (grows so the footer stays at the bottom) */
+main { flex: 1; padding-top: 4rem; padding-bottom: 4rem; }
+
+h1 { font: 400 3rem/1.1 var(--serif); margin: 0 0 1.5rem; }
+p { margin: 0 0 1rem; }
+
+/* Projects and writing lists */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { padding: 0.9rem 0; }
+.list li + li { border-top: 1px solid var(--rule); }
+.list a { font-weight: 500; }
+.list p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Blog post */
+.date { color: var(--muted); font-size: 0.95rem; margin: -0.75rem 0 2.5rem; }
+.post-body { text-align: left; }
+.post-body img { max-width: 100%; }
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--ink); }
+
+/* Phones */
+@media (max-width: 480px) {
+  main { padding-top: 3rem; }
+  h1 { font-size: 2.5rem; }
+}
