@@ -1,5 +1,4 @@
-// Shared header and footer for every page.
-// Edit links here. Each page only has an empty <header></header> and <footer></footer>.
+
 
 const NAV_LINKS = [
   { label: 'home', href: 'index.html' },
@@ -14,7 +13,7 @@ const FOOTER_LINKS = [
 ];
 
 (() => {
-  // Site root = the folder this script lives in, so links work from any page (including writing/).
+  
   const root = new URL('.', document.currentScript.src);
   const page = location.pathname.slice(root.pathname.length).replace(/\.html$/, '') || 'index';
 
